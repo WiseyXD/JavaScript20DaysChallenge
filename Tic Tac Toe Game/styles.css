@@ -1,0 +1,39 @@
+*,::after,::before
+{
+    box-sizing: border-box;
+}
+
+:root
+{
+    --cell-size: 100px;
+    --mark-size : cal(var(--cell-size)*0.9); 
+}
+
+body{
+    margin : 0;
+    /* padding : 0; */
+}
+
+.board
+{
+    justify-content: center;
+    align-content: center;
+    display: grid;
+    align-items: center;
+    justify-items: center ;
+    grid-template-columns: repeat(3,auto);
+    /* grid-template-rows: 0px ,0px,0px; */
+    height: 100vh;
+    width: 100vw;
+}
+
+.cell
+{
+    /* height: 100vw;
+    width: 100vw; */
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: black;
+    border: 1px solid white;
+    margin: 0px;
+}
