@@ -5,8 +5,14 @@ const posts = [
 ];
 
 function createPost(post) {
+  let error = true;
+  
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      if(error)
+      {
+        reject();
+      }
       posts.push(post);
       resolve();
     }, 2000); 
