@@ -4,11 +4,14 @@ const posts = [
   { title: 'Post Two', body: 'This is post two' },
 ];
 
-function createPost(post, cb) {
-  setTimeout(() => {
-    posts.push(post);
-    cb();
-  }, 2000);
+function createPost(post) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      posts.push(post);
+      resolve();
+    }, 2000); 
+  })
+ 
 }
 
 function getPosts() {
@@ -21,4 +24,10 @@ function getPosts() {
   }, 1000);
 }
 
-createPost({ title: 'Post Three', body: 'This is post' }, getPosts);
+createPost({ title: 'Post Three', body: 'This is post' })
+.then((result) => {
+getPosts();  
+})
+.catch((err) => {
+  console.log("Error");
+});;
