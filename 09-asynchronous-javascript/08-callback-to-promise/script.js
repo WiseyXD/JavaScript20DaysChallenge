@@ -37,3 +37,4 @@ getPosts();
 .catch((err) => {
   console.log("Error");
 });;
+
