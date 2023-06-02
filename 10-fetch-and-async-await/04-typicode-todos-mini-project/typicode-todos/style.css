@@ -20,11 +20,15 @@ header {
 
 button {
   padding: 10px;
-  background: salmon;
+  background: red;
   color: white;
   border-radius: 5px;
   width: 100px;
   border: none;
+  cursor: pointer;
+}
+button:hover{
+  background: salmon;
 }
 
 input[type='text'] {
