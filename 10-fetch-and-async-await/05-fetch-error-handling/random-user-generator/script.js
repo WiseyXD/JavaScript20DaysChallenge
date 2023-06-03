@@ -17,7 +17,7 @@ function fetchUser() {
 			hideSpinner();
 			document.querySelector(
 				"#user"
-			).innerHTML = `<p><strong class= "text-red-500">${err}</strong></p>`;
+			).innerHTML = `<p><strong class= "text-red-500 text-center">${err}</strong></p>`;
 		});
 }
 
