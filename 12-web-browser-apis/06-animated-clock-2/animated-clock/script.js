@@ -1,13 +1,40 @@
+const faceColor = document.querySelector("#face-color");
+const borderColor = document.querySelector("#border-color");
+const numberLineColor = document.querySelector("#line-color");
+const largeHand = document.querySelector("#large-hand-color");
+const secondHandcolor = document.querySelector("#second-hand-color");
+
+localStorage.setItem("faceColor", faceColor.value);
+localStorage.setItem("borderColor", borderColor.value);
+localStorage.setItem("numberLineColor", numberLineColor.value);
+localStorage.setItem("largeHand ", largeHand.value);
+localStorage.setItem("secondHandcolor", secondHandcolor.value);
+
+faceColor.addEventListener("change", function () {
+	localStorage.setItem("faceColor", this.value);
+});
+
+borderColor.addEventListener("change", function () {
+	localStorage.setItem("borderColor", this.value);
+});
+
+numberLineColor.addEventListener("change", function () {
+	localStorage.setItem("numberLineColor", this.value);
+});
+
+largeHand.addEventListener("change", function () {
+	localStorage.setItem("largeHand", this.value);
+});
+
+secondHandcolor.addEventListener("change", function () {
+	localStorage.setItem("secondHandcolor", this.value);
+});
+
 function clock() {
 	const now = new Date();
 	const canvas = document.getElementById("canvas");
 	const ctx = canvas.getContext("2d");
 
-	const faceColor = document.querySelector("#face-color");
-	const borderColor = document.querySelector("#border-color");
-	const numberLineColor = document.querySelector("#line-color");
-	const largeHand = document.querySelector("#large-hand-color");
-	const secondHandcolor = document.querySelector("#second-hand-color");
 	// Setup canvas
 	ctx.save(); // save the default state
 	ctx.clearRect(0, 0, 500, 500);
