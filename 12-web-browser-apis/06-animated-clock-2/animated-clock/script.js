@@ -137,3 +137,12 @@ function clock() {
 }
 
 requestAnimationFrame(clock);
+
+const saveButton = document.querySelector("#save-btn");
+saveButton.addEventListener("click", () => {
+	const dataURL = canvas.toDataURL("image/png");
+	const link = document.createElement("a");
+	link.download = "clock.png";
+	link.href = dataURL;
+	link.click();
+});
